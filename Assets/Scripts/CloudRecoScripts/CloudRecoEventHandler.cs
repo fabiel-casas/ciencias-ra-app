@@ -18,6 +18,8 @@ public class CloudRecoEventHandler : MonoBehaviour, ICloudRecoEventHandler
     // ImageTracker reference to avoid lookups
     private ImageTracker mImageTracker;
     private ContentManager mContentManager;
+		private ContentGenerator _contentGenerator;
+		private CloudRecoBehaviour mCloudRecoBehaviour;
 
     // the parent gameobject of the referenced ImageTargetTemplate - reused for all target search results
     private GameObject mParentOfImageTargetTemplate;
@@ -45,6 +47,8 @@ public class CloudRecoEventHandler : MonoBehaviour, ICloudRecoEventHandler
         // get a reference to the Image Tracker, remember it
         mImageTracker = TrackerManager.Instance.GetTracker<ImageTracker>();
         mContentManager = (ContentManager)FindObjectOfType(typeof(ContentManager));
+				_contentGenerator = GetComponent<ContentGenerator>();
+				mCloudRecoBehaviour = GetComponent<CloudRecoBehaviour>();
     }
 
     /// <summary>
@@ -128,6 +132,8 @@ public class CloudRecoEventHandler : MonoBehaviour, ICloudRecoEventHandler
             return;
         }
 
+				Debug.Log("Metadata is " + targetSearchResult.MetaData);
+
         // First clear all trackables
         mImageTracker.TargetFinder.ClearTrackables(false);
 
@@ -139,6 +145,10 @@ public class CloudRecoEventHandler : MonoBehaviour, ICloudRecoEventHandler
         {
             imageTargetBehaviour.ImageTarget.StartExtendedTracking();
         }
+
+				Debug.Log("Metadata is " + targetSearchResult.MetaData);
+				int idContent = int.Parse(targetSearchResult.MetaData);
+				_contentGenerator.LoadDataContent(idContent);
     }
 
     #endregion // ICloudRecoEventHandler_IMPLEMENTATION

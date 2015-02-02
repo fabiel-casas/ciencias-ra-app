@@ -34,6 +34,12 @@ public class ContentManager : MonoBehaviour, ITrackableEventHandler
     #endregion UNTIY_MONOBEHAVIOUR_METHODS
 
     #region PUBLIC_METHODS
+
+		public void TargetCreated(string targetMetadata)
+		{
+			// Data Incoming
+			Debug.Log("Info marcador "+targetMetadata);
+		}
     
     /// <summary>
     /// Implementation of the ITrackableEventHandler function called when the

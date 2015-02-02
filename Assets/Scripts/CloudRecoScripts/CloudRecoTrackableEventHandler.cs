@@ -112,9 +112,9 @@ public class CloudRecoTrackableEventHandler : MonoBehaviour,
         // Start finder again if we lost the current trackable
         ImageTracker imageTracker = TrackerManager.Instance.GetTracker<ImageTracker>();
         if(imageTracker != null)
-		{
-			imageTracker.TargetFinder.ClearTrackables(false);
-            imageTracker.TargetFinder.StartRecognition();
+				{
+					imageTracker.TargetFinder.ClearTrackables(false);
+        	imageTracker.TargetFinder.StartRecognition();
         }
 
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
