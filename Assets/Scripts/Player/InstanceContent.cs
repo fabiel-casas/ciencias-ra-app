@@ -51,13 +51,15 @@ public class InstanceContent : MonoBehaviour {
 
 	private void IntantiateModel(ContentInfo contentInfo){
 		Debug.Log("Local Resource " + contentInfo.UrlLocalContent[0]);
-		model = (Transform)Instantiate(Resources.LoadAssetAtPath<Transform>((string)contentInfo.UrlLocalContent[0]), transform.position, Quaternion.identity);
+		GameObject assetModel = Resources.Load<GameObject>((string)contentInfo.UrlLocalContent[0]);
+		model = (Transform)Instantiate(assetModel.transform, transform.position, Quaternion.identity);
 		model.transform.parent = gameObject.transform;
 	}
 
 	private void IntantiateModelMusic(ContentInfo contentInfo){
 		Debug.Log("Local Resource " + contentInfo.UrlLocalContent[0]);
-		model = (Transform)Instantiate(Resources.LoadAssetAtPath<Transform>((string)contentInfo.UrlLocalContent[0]), transform.position, Quaternion.identity);
+		GameObject assetModel = Resources.Load<GameObject>((string)contentInfo.UrlLocalContent[0]);
+		model = (Transform)Instantiate(assetModel.transform, transform.position, Quaternion.identity);
 		model.transform.parent = gameObject.transform;
 	}
 }

@@ -35,7 +35,7 @@ public class SearchContent : MonoBehaviour {
 						"\"description\": \"mariposa\", " +
 						"\"type\": 5, " +
 						"\"url-content\": {\"none\"}," +
-					"\"url-local-content\":{\"Assets/Resources/Prefabs/mariposa/butterfly2.prefab\"} " +
+					"\"url-local-content\":{\"Prefabs/mariposa/butterfly2\"} " +
 						"}";
 				break;
 			case 6:
@@ -45,7 +45,7 @@ public class SearchContent : MonoBehaviour {
 					"\"description\": \"ballenas en el mar\", " +
 					"\"type\": 6, " +
 					"\"url-content\": {\"http://www.scubadelivery.com/expertos/vida_marina/humback.whale.12.mp3\"}," +
-					"\"url-local-content\":{\"Assets/Resources/Prefabs/ballena/whale.prefab\"} " +
+					"\"url-local-content\":{\"Prefabs/ballena/whale\"} " +
 						"}";
 				break;
 			default:
